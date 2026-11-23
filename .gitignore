@@ -2,3 +2,7 @@ venv/
 .env
 __pycache__/
 chroma_db/chroma_db/
+
+requirements.utf16.bak
+.env
+__pycache__/
