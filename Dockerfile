@@ -4,6 +4,7 @@ WORKDIR /code
 RUN pip install --retries 10 --timeout 120 torch --index-url https://download.pytorch.org/whl/cpu
 COPY requirements-docker.txt .
 RUN pip install -r requirements-docker.txt
+RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
 COPY . .
 EXPOSE 8000
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
