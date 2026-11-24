@@ -1,0 +1,33 @@
+
+:root {
+  --bg: #000; --panel: #0e0b16; --ink: #efeaf9; --mute: #9a90b3;
+  --line: #241c36; --acc: #a78bfa; --acc2: #1d1533; --on: #000;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, sans-serif; }
+.app { display: grid; grid-template-columns: 300px 1fr; height: 100%; max-width: 1150px; margin: 0 auto; }
+aside { border-right: 1px solid var(--line); padding: 20px 16px; overflow: auto; background: var(--panel); }
+h1 { font-size: 18px; margin: 0; }
+.sub { color: var(--mute); font-size: 13px; margin: 2px 0 16px; }
+h2 { font-size: 13px; color: var(--mute); margin: 18px 0 8px; }
+.cat { font-size: 12px; color: var(--mute); margin: 10px 0 4px; }
+.empty { color: var(--mute); font-size: 13px; }
+.ticket { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; margin-bottom: 8px; font-size: 13px; }
+.ticket b { display: block; }
+.pill { font-size: 12px; padding: 1px 8px; border-radius: 99px; background: var(--acc2); color: var(--acc); }
+.chip, .act { font: inherit; font-size: 13px; cursor: pointer; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 99px; padding: 5px 11px; margin: 0 6px 6px 0; }
+.act { border-color: var(--acc); color: var(--acc); margin-top: 10px; }
+.chip:hover, .act:hover { background: var(--acc2); }
+main { display: flex; flex-direction: column; min-width: 0; height: 100%; }
+.log { flex: 1; overflow: auto; padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
+.msg { max-width: min(640px, 90%); padding: 12px 14px; border-radius: 14px; }
+.msg .text { white-space: pre-wrap; }
+.msg.user { align-self: flex-end; background: var(--acc); color: var(--on); border-bottom-right-radius: 4px; }
+.msg.agent { align-self: flex-start; background: var(--panel); border: 1px solid var(--line); border-bottom-left-radius: 4px; }
+.trace { margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--mute); display: grid; gap: 3px; }
+.trace b { color: var(--acc); font-weight: 600; margin-right: 4px; }
+form { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--line); background: var(--panel); }
+input { flex: 1; min-width: 0; font: inherit; padding: 11px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.send { font: inherit; background: var(--acc); color: var(--on); border: 0; border-radius: 10px; padding: 0 18px; font-weight: 600; cursor: pointer; }
+@media (max-width: 720px) { .app { grid-template-columns: 1fr; } aside { display: none; } }
