@@ -1,8 +1,26 @@
+# Python
 venv/
-.env
+.venv/
 __pycache__/
-chroma_db/chroma_db/
+*.py[cod]
 
-requirements.utf16.bak
+# Environment and secrets
 .env
-__pycache__/
+.env.*
+!.env.example
+
+# Vector database
+chroma_db/
+
+# Local databases
+data/*.db
+*.sqlite3
+*.sqlite
+
+# Backups
+backups/
+*.bak
+
+# Cache
+.pytest_cache/
+.mypy_cache/
